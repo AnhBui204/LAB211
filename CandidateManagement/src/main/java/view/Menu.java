@@ -1,7 +1,7 @@
 pakage view;
 
 public class Menu{
-     private void displayMainMenu(){
+     public void displayMainMenu(){
           System.out.println("HE THONG QUAN LY UNG VIEN");
           System.out.println("1. Experience");
           System.out.println("2.Fresher");
