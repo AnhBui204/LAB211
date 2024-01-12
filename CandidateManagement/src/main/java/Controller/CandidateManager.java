@@ -37,14 +37,44 @@ public class CandidateManager {
          System.out.println("Nhap Ho: ");
          candidate.setLastName(sc.next());
          System.out.println("Nhap ngay sinh: ");
+         string birthDate=sc.next();
+         while (!isValidBirthDate(birthDate)) {
+        System.out.println("Ngày sinh không hợp lệ. Vui lòng nhập lại.");
+        System.out.print("Nhập Ngày sinh (YYYY): ");
+        birthDate = scanner.next();
+    }
          candidate.setBirthDate(sc.next());
          System.out.println("Nhap dia chi: ");
          candidate.setAddress(sc.next());
          System.out.println("Nhap dien thoai: ");
+         string phoneNumber=sc.next();
+         while (!isValidPhoneNumber(phoneNumber)) {
+         System.out.println("Số điện thoại không hợp lệ. Vui lòng nhập lại.");
+         System.out.print("Nhập Điện thoại: ");
+         phoneNumber = scanner.next();
+         }
          candidate.setPhoneNumber(sc.next());
          System.out.println("Nhap email: ");
+         String email = scanner.next();
+         while (!isValidEmail(email)) {
+        System.out.println("Email không hợp lệ. Vui lòng nhập lại.");
+        System.out.print("Nhập Email: ");
+        email = scanner.next();
+    }
          candidate.setEmail(sc.next());
      }
+    private boolean isValidBirthDate(String birthDate) {
+    int currentYear = java.time.Year.now().getValue();
+    return birthDate.matches("^\\d{4}$") && Integer.parseInt(birthDate) >= 1900 && Integer.parseInt(birthDate) <= currentYear;
+}
+
+private boolean isValidPhoneNumber(String phoneNumber) {
+    return phoneNumber.matches("^\\d{10,}$");
+}
+
+private boolean isValidEmail(String email) {
+    return email.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
+}
      private void displayAllCandidates(){
          System.out.println("=========UNG VIEN KINH NGHIEM========");
          for(ExperienceCandidate candidate :experienceCandidates){
