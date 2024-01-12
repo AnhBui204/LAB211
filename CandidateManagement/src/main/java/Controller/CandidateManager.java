@@ -47,13 +47,13 @@ public class CandidateManager {
          System.out.println("Nhap dia chi: ");
          candidate.setAddress(sc.next());
          System.out.println("Nhap dien thoai: ");
-         string phoneNumber=sc.next();
+         String phoneNumber = sc.nextLine().trim(); 
          while (!isValidPhoneNumber(phoneNumber)) {
          System.out.println("Số điện thoại không hợp lệ. Vui lòng nhập lại.");
          System.out.print("Nhập Điện thoại: ");
          phoneNumber = scanner.next();
          }
-         candidate.setPhoneNumber(sc.next());
+         candidate.setPhone(phoneNumber);
          System.out.println("Nhap email: ");
          String email = scanner.next();
          while (!isValidEmail(email)) {
