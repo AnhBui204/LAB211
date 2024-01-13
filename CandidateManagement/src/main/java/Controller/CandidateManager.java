@@ -41,7 +41,7 @@ public class CandidateManager {
          while (!isValidBirthDate(birthDate)) {
         System.out.println("Ngày sinh không hợp lệ. Vui lòng nhập lại.");
         System.out.print("Nhập Ngày sinh (YYYY): ");
-        birthDate = scanner.next();
+        
     }
          candidate.setBirthDate(sc.next());
          System.out.println("Nhap dia chi: ");
@@ -51,7 +51,7 @@ public class CandidateManager {
          while (!isValidPhoneNumber(phoneNumber)) {
          System.out.println("Số điện thoại không hợp lệ. Vui lòng nhập lại.");
          System.out.print("Nhập Điện thoại: ");
-         phoneNumber = scanner.next();
+         
          }
          candidate.setPhone(phoneNumber);
          System.out.println("Nhap email: ");
