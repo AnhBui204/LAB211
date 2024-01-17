@@ -29,6 +29,9 @@ public class StudentView extends Menu {
             case 4:
                 a.generateReport();
                 break;
+            case 5:
+                System.exit(0);
+                break;
             default:
                 System.out.println("Invalid choice");
                 break;
