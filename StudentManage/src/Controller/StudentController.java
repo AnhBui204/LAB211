@@ -23,7 +23,16 @@ public class StudentController {
         
     }
     public void createStudents(String ID, String name, String semester, String course){
-        
+        System.out.println("Enter student detail : ");
+        System.out.print("Studnent Id:");
+        a.setID(sc.nextInt());
+        System.out.println("Student name:");
+        a.setStudentName(sc.nextLine());
+        System.out.println("Semester:");
+        a.setSemester(sc.nextInt());
+        System.out.println("Course name:");
+        a.setCourseName(sc.nextLine());
+        student.add(a);
     }
     
     public void addStudents(ArrayList<Students> listStudents, String ID, String name, String semester, String course){
