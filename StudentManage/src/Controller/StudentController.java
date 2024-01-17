@@ -1,44 +1,33 @@
+package Controllers;
 
-package Controller;
-
-import Model.StudentModel;
+import Models.Students;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Scanner;
 
 public class StudentController {
-
-    Scanner sc = new Scanner(System.in);
-    ArrayList<StudentModel> student = new ArrayList<>();
-    StudentModel a = new StudentModel();
     
-    public void createStudent() {
-        
-        System.out.println("Enter student detail : ");
-        System.out.print("Studnent Id:");
-        a.setID(sc.nextInt());
-        System.out.println("Student name:");
-        a.setStudentName(sc.nextLine());
-        System.out.println("Semester:");
-        a.setSemester(sc.nextInt());
-        System.out.println("Course name:");
-        a.setCourseName(sc.nextLine());
-        student.add(a);
+    public StudentController() {
     }
-
-    public void findAndSortStudents() {
-        
-    }
-
-    public void updateOrDeleteStudent() {
+    ArrayList<Students> listStudents = new ArrayList<>();
+    
+    public void initiate(){
+        listStudents.add(new Students("DE01", "Tran Trung Dung", "Spring", "Java"));
+        listStudents.add(new Students("DE02", "Bui Le Viet Anh", "Summer", "C"));
+        listStudents.add(new Students("DE03", "Nguyen Xuan Linh", "Fall", ".Net"));
+        listStudents.add(new Students("DE04", "Le Van Thien", "Spring", "DBI"));
+        listStudents.add(new Students("DE05", "Nguyen Nam Phong", "Spring", "Java"));
+        listStudents.add(new Students("DE06", "Tran Thang Chi", "Fall", ".NET"));
+        listStudents.add(new Students("DE07", "Tran Duc Long", "Summer", "DBI"));
+        listStudents.add(new Students("DE08", "Nguyen Ba Anh Duc", "Fall", "C"));
+        listStudents.add(new Students("DE09", "Hoang Trong Quang", "Summer", "DBI"));
+        listStudents.add(new Students("DE10", "Hoang Nhat Minh", "Spring", ".NET"));
         
     }
-
-    public void generateReport() {
+    public void createStudents(String ID, String name, String semester, String course){
         
     }
     
+    public void addStudents(ArrayList<Students> listStudents, String ID, String name, String semester, String course){
+        Students ls = new Students(ID, name, semester, course);
+        listStudents.add(ls);
+    }
 }
