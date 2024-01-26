@@ -1,0 +1,3 @@
+as you can see,  it is possible to determine whether a string is normalized very quickly. Initializing buffers accounts for a significant portion of the normalization cost in the "second row." Its expense is spread out over longer string processing times.
+
+ it turns out that we seldom use these buffers,   so  we may modify the approach in the future to expedite the typical situation for short strings even more.
