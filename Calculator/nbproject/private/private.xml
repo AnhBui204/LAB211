@@ -5,7 +5,6 @@
         <group>
             <file>file:/D:/JAVA/Calculator/src/calculator/Calculator.java</file>
             <file>file:/D:/JAVA/Calculator/src/View/CalculatorView.java</file>
-            <file>file:/D:/JAVA/Calculator/src/Model/CalculatorModel.java</file>
             <file>file:/D:/JAVA/Calculator/src/Controller/CalculatorController.java</file>
         </group>
     </open-files>
