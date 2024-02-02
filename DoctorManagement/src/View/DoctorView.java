@@ -16,9 +16,11 @@ public class DoctorView{
 
         String code;
         do {
-            System.out.println("Enter Doctor Code (DOCxx):");
-            code = sc.nextLine().toUpperCase().trim();
-        } while (!isValidFormat(code));
+            do {
+                System.out.println("Enter Doctor Code (DOCxx):");
+                code = sc.nextLine().toUpperCase().trim();
+            } while (!isValidFormat(code));
+        } while (!duplicateCode(code));
 
         System.out.println("Doctor name: ");
         String docName = sc.nextLine().trim();
@@ -40,6 +42,16 @@ public class DoctorView{
             System.out.println("Invalid code. Please enter in the format DOCxx.");
             return false;
         }
+    }
+
+    private boolean duplicateCode(String code) {
+        for (Doctor doc : list) {
+            if (doc.getCode().equals(code)) {
+                System.out.println("Doctor {"+code+"} has been exist");
+                return false;
+            }
+        }
+        return true;
     }
 
     public void searchDoctor() {
