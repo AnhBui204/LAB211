@@ -5,9 +5,8 @@ import Model.Doctor;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class DoctorView{
+public class DoctorView {
 
-    
     private ArrayList<Doctor> list = new ArrayList<>();
     private Scanner sc = new Scanner(System.in);
 
