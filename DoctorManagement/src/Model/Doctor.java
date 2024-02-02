@@ -52,8 +52,6 @@ public class Doctor{
 
     @Override
     public String toString() {
-        return "DocCode " + code + " | DocName " + DocName + " | Specialization " + Specialization + " | Availability " + Availability;
-    }
-    
-  
+        return "DocCode [" + code + "] | DocName [" + DocName + "] | Specialization [" + Specialization + "] | Availability [" + Availability+']';
+    } 
 }
