@@ -1,10 +1,8 @@
 package View;
 
 import Model.Worker;
-import java.time.LocalDateTime;
-
 import java.util.ArrayList;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class WorkerView {
@@ -35,7 +33,7 @@ public class WorkerView {
             } catch (NumberFormatException e) {
                 System.out.println("Invalid input, age must be in range 18 to 50");
             }
-        } while (wAge < 18 && wAge > 50);
+        } while (wAge < 18 || wAge > 50);
 
         int wSalary = 0;
         do {
@@ -78,7 +76,7 @@ public class WorkerView {
     }
 
     public void display() {
-        System.out.println("-----------------------------------------------------------------------------------------------");
+        System.out.println("------------------------------------------------------------------------------------------------------------");
         System.out.printf("%-15s | %-15s | %-10s | %-15s | %-15s | %-10s | %-20s\n", "WorkerID", "WorkerName", "WorkerAge",
                  "WorkerSalary", "WorkLocation","Status" , "Date");
 
@@ -88,7 +86,7 @@ public class WorkerView {
                     worker.getSalary(), worker.getWorkLocation(),worker.getStatus(),worker.getDate());
         }
 
-        System.out.println("-----------------------------------------------------------------------------------------------");
+        System.out.println("------------------------------------------------------------------------------------------------------------");
     }
 
     public void increaseSalary(){
@@ -111,9 +109,10 @@ public class WorkerView {
         } while (raise <= 0);
         int newSalary = foundWorker.getSalary() + raise;
         String status = "UP";
-        Date date = new Date();
-        Worker a = new Worker(foundWorker.getId(), foundWorker.getName(), foundWorker.getAge(), newSalary, foundWorker.getWorkLocation(),status,date);
+        LocalDate dates = LocalDate.now();
+        Worker a = new Worker(foundWorker.getId(), foundWorker.getName(), foundWorker.getAge(), newSalary, foundWorker.getWorkLocation(),status,dates);
         change.add(a);
+        sc.nextLine();
     }
     
     public void decreaseSalary(){
@@ -136,9 +135,10 @@ public class WorkerView {
         } while (raise <= 0);
         int newSalary = foundWorker.getSalary() - raise;
         String status = "DOWN";
-        Date date = new Date();
-        Worker a = new Worker(foundWorker.getId(), foundWorker.getName(), foundWorker.getAge(), newSalary, foundWorker.getWorkLocation(),status,date);
+        LocalDate dates = LocalDate.now();
+        Worker a = new Worker(foundWorker.getId(), foundWorker.getName(), foundWorker.getAge(), newSalary, foundWorker.getWorkLocation(),status,dates);
         change.add(a);
+        sc.nextLine();
     }
     
     private Worker findWorker(String Id) {
