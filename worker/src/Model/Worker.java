@@ -1,8 +1,6 @@
 
 package Model;
-
-import java.util.Date;
-
+import java.time.LocalDate;
 public class Worker{
 
     public String Id;
@@ -11,7 +9,7 @@ public class Worker{
     public int salary;
     public String workLocation;
     public String status;
-    public Date date;
+    public LocalDate date;
 
     public Worker() {
     }
@@ -24,7 +22,7 @@ public class Worker{
         this.workLocation = workLocation;
     }
     
-    public Worker(String Id, String name, int age, int salary, String workLocation, String status, Date date) {
+    public Worker(String Id, String name, int age, int salary, String workLocation, String status, LocalDate date) {
         this.Id = Id;
         this.name = name;
         this.age = age;
@@ -82,11 +80,11 @@ public class Worker{
         this.status = status;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
