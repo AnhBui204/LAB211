@@ -1,1 +1,5 @@
 cat,meo
+dog,cho
+chicken,ga
+duck,vit
+Tiger,ho
