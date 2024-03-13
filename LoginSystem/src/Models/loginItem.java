@@ -1,20 +1,25 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
+
 package Models;
 
-/**
- *
- * @author PC STUDENT
- */
 public class LoginSystem {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+  public String generateCaptcha() {
+        String capChar = "ABCDEFGHJKLMNOPQRSTUVWSYZabcdefghijklmnopqrstuvwsyz0123456789";
+        SecureRandom cap = new SecureRandom();
+        StringBuilder captcha = new StringBuilder();
+        for (int i = 0; i <= 6; i++) {
+            int index = cap.nextInt(capChar.length());
+            captcha.append(capChar.charAt(index));
+
+        }
+        return Captcha.toString();
+    }
+    
+    public String checkCaptch(String input, String generateCaptcha){
+        if(input.equals(generateCaptcha))
+            return "Captcha is valid";
+        else 
+            return "InvalidCaptcha. Pls try again.";
     }
     
 }
